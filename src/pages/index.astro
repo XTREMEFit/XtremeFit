@@ -1,9 +1,8 @@
 ---
 // Component Imports
-import { imageConfig } from 'astro:assets';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
-import Navbar from '../components/Nav.astro';
+import Nav from '../components/Nav.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -26,7 +25,9 @@ import Navbar from '../components/Nav.astro';
 		/>
 		<div class="grid place-items-center h-screen content-center">
 			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline purple">Markdown is also supported...</a>
+			<a href="/markdown-page" class="p-4 underline purple"
+				>Markdown is also supported...</a
+			>
 
 			<ul role="list" class="link-card-grid">
 				<Card
@@ -37,12 +38,12 @@ import Navbar from '../components/Nav.astro';
 				<Card
 					href=""
 					title="Araz"
-					body="aron is going to make videos of himself traning naked for the project "
+					body="aron is going to make videos of himself training naked for the project and is secretly dating a transgender aka ms dickpic "
 				/>
 				<Card
-					href="kevin"
+					href=""
 					title="Kevin"
-					body="kevin is special"
+					body="kevin is special-needs"
 				/>
 				<Card
 					href=""
@@ -52,17 +53,16 @@ import Navbar from '../components/Nav.astro';
 			</ul>
 		</div>
 
-
 		<style>
-			.purple{
+			.purple {
 				@apply hover:text-purple-500 transition-colors ease-in-out duration-200;
 			}
 			.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-		}
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+				gap: 1rem;
+				padding: 0;
+			}
 		</style>
 	</body>
 </html>
