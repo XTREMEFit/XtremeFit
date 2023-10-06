@@ -9,13 +9,27 @@ export interface Props {
 const { href1, href2, button1, button2 } = Astro.props;
 ---
 
-<div>
-    <a href=""></a>
-    <a href=""></a>
+<div class="bg-gray-600 h-20 w-full fixed flex justify-center align-center
+">
+    <img src="../../public/favicon.svg" alt="home" class="h-20 w-20 hover:cursor-pointer absolute left-0
+    ">
 
+    <a href={href1} class=" button1 button_mall
+    ">{button1}</a>
+    <a href={href2} class=" button_mall
+    ">{button2}</a>
 </div>
 
 <style>
-    
-
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_mall{
+    @apply button1 h-fit w-fit bg-gray-500 p-3 rounded-2xl border-black border-2 mr-5 hover:bg-gray-700 font-bold;
+}
+.button1:hover{
+background-color: ;
+}
 </style>
