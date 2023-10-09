@@ -2,6 +2,8 @@
 // Component Imports
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import Navbar from '../components/Nav.astro';
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -14,7 +16,13 @@ import Card from '../components/Card.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro + TailwindCSS</title>
 	</head>
-	<body>
+	<body class="bg-gray-400">
+		<Navbar 
+		button1="Generator"
+		button2="is aron black"
+		href1="/generator"
+		href2="#dwa"
+		/>
 		<div class="grid place-items-center h-screen content-center">
 			<Button>Tailwind Button in Astro!</Button>
 			<a href="/markdown-page" class="p-4 underline purple"
