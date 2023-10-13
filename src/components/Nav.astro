@@ -1,37 +1,62 @@
 ---
 export interface Props {
-	button1: string;
-	button2: string;
-	href1: string;
-	href2: string;
+  button1: string;
+  button2: string;
+  href1: string;
+  href2: string;
 }
 
 const { href1, href2, button1, button2 } = Astro.props;
 ---
 
-<div class="bg-gray-600 h-20 w-full fixed flex justify-center align-center
-">
-    <img src="../../public/favicon.svg" alt="home" class="h-20 w-20 hover:cursor-pointer absolute left-0
-    ">
-    <h2 class="font-bold left-20 absolute text-4xl
-    ">XtremeFit</h2>
+<!-- <div class="bg-gray-600 h-20 w-full fixed flex justify-center align-center">
+  <img
+    src="../../public/favicon.svg"
+    alt="home"
+    class="h-20 w-20 hover:cursor-pointer absolute left-0"
+  />
+  <h2 class="font-bold left-20 absolute text-4xl">XtremeFit</h2>
 
-    <a href={href1} class=" button1 button_mall
-    ">{button1}</a>
-    <a href={href2} class=" button_mall
-    ">{button2}</a>
+  <a href={href1} class="button1 button_mall">{button1}</a>
+  <a href={href2} class="button_mall">{button2}</a>
+</div> -->
+
+<div class="flex justify-center items-center bg-[#333] overflow-hidden" id="myTopnav">
+  <img
+    src="../../public/favicon.svg"
+    alt="home"
+    class="h-14 w-14 hover:cursor-pointer absolute left-0"
+  />
+  <a href="/" class="active">Home</a>
+  <a href={href1}>{button1}</a>
+  <a href={href2}>{button2}</a>
+  <a href="#about">About</a>
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
 
+  <script>
+  
+  </script>
+
 <style>
-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+a {
+  @apply float-left block text-[#f2f2f2] text-center px-[16px] py-[14px] no-underline text-[17px] hover:bg-[#ddd] hover:text-[black]
 }
-.button_mall{
-    @apply button1 h-fit w-fit bg-gray-500 p-3 rounded-2xl border-black border-2 mr-5 hover:bg-gray-700 font-bold;
+
+
+a.active {
+  background-color: #04AA6D;
+  color: white;
 }
-.button1:hover{
-background-color: ;
+
+@media screen and (max-width: 600px) {
+  a:not(:first-child) {display: none;}
+  a.icon {
+    float: right;
+    display: block;
+  }
 }
+
 </style>
