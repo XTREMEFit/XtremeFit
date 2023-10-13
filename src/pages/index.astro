@@ -25,9 +25,8 @@ import Footer from '../components/Footer.astro';
 		href2=""
 		/>
 		
-		<div class="flex">
-			<div class="info">
-				<p>Välkommen till XTREMEFIT - din ultimata träningspartner!
+		<div class="wrapper">
+				<p class="info">Välkommen till XTREMEFIT - din ultimata träningspartner!
 
 					XTREMEFIT är din träningsgenerator som tar din träning till nästa nivå. Oavsett om du är en nybörjare som vill komma igång med träningen eller en erfaren atlet som vill utmana dig själv, har vi det perfekta träningsprogrammet för dig.
 					
@@ -36,7 +35,6 @@ import Footer from '../components/Footer.astro';
 					Vi förstår att träning inte bara handlar om att forma kroppen, det handlar också om att stärka ditt sinne och förbättra din hälsa. Därför erbjuder XTREMEFIT också resurser och rådgivning om kost och hälsosam livsstil för att hjälpa dig att uppnå dina mål på ett hållbart sätt.
 					
 					Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</p>
-			</div>
 
 			<div class="start">
 				<button>Börja nu</button>
@@ -45,42 +43,36 @@ import Footer from '../components/Footer.astro';
 
 		<Footer></Footer>
 <style>
-	.flex{
-		position: absolute;
-		border: 0.3rem solid #000;
-		border-radius: 0.5rem;
-		height: 38rem;
-		width: 80rem;
-		margin-top: 2rem;
-		margin-left: 15rem;
+	body{
+		min-height:100vh;
+	}
+	.wrapper{
+		display: grid;
+		grid-template-columns:15% 1fr 15%;
+		grid-template-rows:1fr 1fr;
+
+		background-color:#B0B;
+		height: 100%;
+		width: 100%;
 	}
 
 	.info{
-		position: absolute;
+		grid-column:2;
 		border: 0.3rem solid #000;
 		border-radius: 0.5rem;
-		height: 25rem;
-		width: 70rem;
-
-		margin-top: 2rem;
-		margin-left: 5rem;
-		/* padding: 20rem; */	
+		height: fit-content;
+		width: auto;
+		padding:10px;
 		
 		text-decoration: none;
 		color: black;
 		background-color: gray;
 		opacity: 0.8;
 	}
-
-	p{
-		/* position: absolute; */
-		margin-top: 7rem;
-		
-		transition: color 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
+	
 	.start{
-		/* position: absolute; */
+		grid-column:2;
+		grid-row:2;
 		@apply hover:text-purple-500 transition-colors ease-in-out duration-200;
 		border: 0.3rem solid #000;
 		border-radius: 0.5rem;
@@ -88,14 +80,8 @@ import Footer from '../components/Footer.astro';
 		height: 5rem;
 		width: 10rem;
 
-		margin-top: 30rem;
-		margin-left: 35rem;
 	}
 
-	button{
-		margin-top: 1.5rem;
-		margin-left: 2.5rem;
-	}
 </style>
 	</body>
 </html>
