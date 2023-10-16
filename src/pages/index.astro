@@ -25,11 +25,9 @@ import Footer from '../components/Footer.astro';
 		href2=""
 		/>
 		
-		<div class="flex">
-			<div class="info">
-				<h1>Välkommen till XTREMEFIT - din ultimata träningspartner!</h1>
-				
-				<p>
+		<div class="wrapper">
+				<p class="info">Välkommen till XTREMEFIT - din ultimata träningspartner!
+
 					XTREMEFIT är din träningsgenerator som tar din träning till nästa nivå. Oavsett om du är en nybörjare som vill komma igång med träningen eller en erfaren atlet som vill utmana dig själv, har vi det perfekta träningsprogrammet för dig.
 					
 					Med XTREMEFIT kan du skapa anpassade träningsprogram som är skräddarsydda efter dina mål, fitnessnivå och tillgänglig tid. Vår enkla och intuitiva plattform gör det enkelt att planera och följa ditt träningsprogram. Du kommer att ha tillgång till en mängd olika övningar och träningsrutiner, så du kommer aldrig att tröttna på din träning.
@@ -37,7 +35,6 @@ import Footer from '../components/Footer.astro';
 					Vi förstår att träning inte bara handlar om att forma kroppen, det handlar också om att stärka ditt sinne och förbättra din hälsa. Därför erbjuder XTREMEFIT också resurser och rådgivning om kost och hälsosam livsstil för att hjälpa dig att uppnå dina mål på ett hållbart sätt.
 					
 					Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</p>
-			</div>
 
 			<div class="start">
 				<button>Börja nu</button>
@@ -46,15 +43,27 @@ import Footer from '../components/Footer.astro';
 
 		<Footer></Footer>
 <style>
-	.flex{
-		position: absolute;
+	body{
+		min-height:100vh;
+	}
+	.wrapper{
+		display: grid;
+		grid-template-columns:15% 1fr 15%;
+		grid-template-rows:1fr 1fr;
+
+		background-color:#B0B;
+		height: 100%;
+		width: 100%;
+	}
+
+	.info{
+		grid-column:2;
 		border: 0.3rem solid #000;
 		border-radius: 0.5rem;
-		height: 38rem;
-		width: 80rem;
-		margin-top: 2rem;
-		margin-left: 15rem;
-
+		height: fit-content;
+		width: auto;
+		padding:10px;
+		
 		text-decoration: none;
 		color: black;
 		background-color: gray;
@@ -64,7 +73,7 @@ import Footer from '../components/Footer.astro';
 	.info{
 		position: absolute;
 		border: 0.3rem solid #000;
-		background-color: #b0b;
+		background-color: #ca6666;
 		border-radius: 0.5rem;
 		height: 25rem;
 		width: 70rem;
@@ -82,7 +91,8 @@ import Footer from '../components/Footer.astro';
 	}
 
 	.start{
-		/* position: absolute; */
+		grid-column:2;
+		grid-row:2;
 		@apply hover:text-purple-500 transition-colors ease-in-out duration-200;
 		border: 0.3rem solid #000;
 		border-radius: 0.5rem;
@@ -90,19 +100,8 @@ import Footer from '../components/Footer.astro';
 		height: 5rem;
 		width: 10rem;
 
-		margin-top: 30rem;
-		margin-left: 35rem;
 	}
 
-	button{
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		margin-top: 1.5rem;
-		margin-left: 3rem;
-	}
-
-	h1{
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	}
 </style>
 	</body>
 </html>
