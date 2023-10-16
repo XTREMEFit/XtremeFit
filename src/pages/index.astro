@@ -25,12 +25,8 @@ import Body from '../components/body.astro';
 		href1="/generator"
 		href2=""
 		/>
-	<Body
-	button1="generera"
-	info=""
-	href1=""
-	href2=""
-	>
+
+
 	<div id="omoss" class="omsidan ">
 	Välkommen till XTREMEFIT - din ultimata träningspartner!
 		<br>
@@ -39,8 +35,18 @@ import Body from '../components/body.astro';
 		Med XTREMEFIT kan du skapa anpassade träningsprogram som är skräddarsydda efter dina mål, fitnessnivå och tillgänglig tid. Vår enkla och intuitiva plattform gör det enkelt att planera och följa ditt träningsprogram. Du kommer att ha tillgång till en mängd olika övningar och träningsrutiner, så du kommer aldrig att tröttna på din träning.
 		<br>
 		Vi förstår att träning inte bara handlar om att forma kroppen, det handlar också om att stärka ditt sinne och förbättra din hälsa. Därför erbjuder XTREMEFIT också resurser och rådgivning om kost och hälsosam livsstil för att hjälpa dig att uppnå dina mål på ett hållbart sätt.
-<br>
-		Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</div></Body>
+		<br>
+		Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</div>
+
+				
+	<div class=" wrapper">
+	
+		<a href="/generator" class=" wrapper__card">
+			<div class=" wrapper__card__img "> </div>
+			<p class=" wrapper__card__text">generera</p>
+		</a>
+		
+    </div>
 	
 		
 		<Footer></Footer>
@@ -69,6 +75,35 @@ import Body from '../components/body.astro';
     font-weight: bold;
 	line-height: 40px;
 }
+
+
+.wrapper {
+    grid-row: 3 / 20;
+    display: grid;
+    padding: 30px 60px;
+    background-color: #FCF9C6;
+
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.wrapper__card {
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    background-color: #E0DECA;
+    height: 300px;
+    padding: 10px;
+}
+
+.wrapper__card__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+
 
 
 </style>
