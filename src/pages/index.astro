@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Navbar from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Body from '../components/body.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -24,63 +25,51 @@ import Footer from '../components/Footer.astro';
 		href1="/generator"
 		href2=""
 		/>
+	<Body
+	button1="generera"
+	info=""
+	href1=""
+	href2=""
+	>
+	<div id="omoss" class="omsidan ">
+	Välkommen till XTREMEFIT - din ultimata träningspartner!
+		<br>
+		XTREMEFIT är din träningsgenerator som tar din träning till nästa nivå. Oavsett om du är en nybörjare som vill komma igång med träningen eller en erfaren atlet som vill utmana dig själv, har vi det perfekta träningsprogrammet för dig.
+		<br>
+		Med XTREMEFIT kan du skapa anpassade träningsprogram som är skräddarsydda efter dina mål, fitnessnivå och tillgänglig tid. Vår enkla och intuitiva plattform gör det enkelt att planera och följa ditt träningsprogram. Du kommer att ha tillgång till en mängd olika övningar och träningsrutiner, så du kommer aldrig att tröttna på din träning.
+		<br>
+		Vi förstår att träning inte bara handlar om att forma kroppen, det handlar också om att stärka ditt sinne och förbättra din hälsa. Därför erbjuder XTREMEFIT också resurser och rådgivning om kost och hälsosam livsstil för att hjälpa dig att uppnå dina mål på ett hållbart sätt.
+<br>
+		Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</div></Body>
+	
 		
-		<div class="wrapper">
-				<p class="info">Välkommen till XTREMEFIT - din ultimata träningspartner!
-
-					XTREMEFIT är din träningsgenerator som tar din träning till nästa nivå. Oavsett om du är en nybörjare som vill komma igång med träningen eller en erfaren atlet som vill utmana dig själv, har vi det perfekta träningsprogrammet för dig.
-					
-					Med XTREMEFIT kan du skapa anpassade träningsprogram som är skräddarsydda efter dina mål, fitnessnivå och tillgänglig tid. Vår enkla och intuitiva plattform gör det enkelt att planera och följa ditt träningsprogram. Du kommer att ha tillgång till en mängd olika övningar och träningsrutiner, så du kommer aldrig att tröttna på din träning.
-					
-					Vi förstår att träning inte bara handlar om att forma kroppen, det handlar också om att stärka ditt sinne och förbättra din hälsa. Därför erbjuder XTREMEFIT också resurser och rådgivning om kost och hälsosam livsstil för att hjälpa dig att uppnå dina mål på ett hållbart sätt.
-					
-					Oavsett om du vill bygga muskler, bränna fett eller helt enkelt förbättra din hälsa, så är XTREMEFIT här för att stödja dig på din träningsresa. Kom igång redan idag och upplev fördelarna med en personlig träningsupplevelse som är skräddarsydd för dig. XTREMEFIT - din väg till extrem fitness!</p>
-
-			<div class="start">
-				<button>Börja nu</button>
-			</div>
-		</div>
-
 		<Footer></Footer>
 <style>
-	body{
-		min-height:100vh;
-	}
-	.wrapper{
-		display: grid;
-		grid-template-columns:15% 1fr 15%;
-		grid-template-rows:1fr 1fr;
-
-		background-color:#B0B;
-		height: 100%;
-		width: 100%;
-	}
-
-	.info{
-		grid-column:2;
-		border: 0.3rem solid #000;
-		border-radius: 0.5rem;
-		height: fit-content;
-		width: auto;
-		padding:10px;
-		
-		text-decoration: none;
-		color: black;
-		background-color: gray;
-		opacity: 0.8;
-	}
 	
-	.start{
-		grid-column:2;
-		grid-row:2;
-		@apply hover:text-purple-500 transition-colors ease-in-out duration-200;
-		border: 0.3rem solid #000;
-		border-radius: 0.5rem;
-		background-color: rgb(154, 130, 196);
-		height: 5rem;
-		width: 10rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+	body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content repeat(17, 1fr) min-content;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-	}
+.omsidan {
+    background-color: #C7D36F;
+    grid-row: 2 / 3;
+    padding: 20px 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+	line-height: 40px;
+}
+
 
 </style>
 	</body>
