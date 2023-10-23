@@ -1,25 +1,13 @@
 ---
 export interface Props {
-    button1: string;
-    button2: string;
-    href1: string;
-    href2: string;
+    home: string;
+    generator: string;
+
 }
 
-const { href1, href2, button1, button2 } = Astro.props;
+const { home, generator} = Astro.props;
 ---
 
-<!-- <div class="bg-gray-600 h-20 w-full fixed flex justify-center align-center">
-  <img
-    src="../../public/favicon.svg"
-    alt="home"
-    class="h-20 w-20 hover:cursor-pointer absolute left-0"
-  />
-  <h2 class="font-bold left-20 absolute text-4xl">XtremeFit</h2>
-
-  <a href={href1} class="button1 button_mall">{button1}</a>
-  <a href={href2} class="button_mall">{button2}</a>
-</div> -->
 <div
     class="flex justify-center items-center bg-[#333] overflow-hidden"
     id="myTopnav"
@@ -29,9 +17,8 @@ const { href1, href2, button1, button2 } = Astro.props;
         alt="home"
         class="h-14 w-14 hover:cursor-pointer absolute left-0"
     />
-    <a href="/" class="active">Home</a>
-    <a href={href1}>{button1}</a>
-    <a href={href2}>{button2}</a>
+    <a href="/" class={home}>Home</a>
+    <a href="/generator" class={generator}>Generator</a>
     <a href="#about">About</a>
     <i class="fa fa-bars"></i>
 </div>
