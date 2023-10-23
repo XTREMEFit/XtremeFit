@@ -4,7 +4,6 @@ import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Navbar from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import Body from '../components/body.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -20,10 +19,8 @@ import Body from '../components/body.astro';
 	</head>
 	<body class="bg-gray-400">
 		<Navbar 
-		button1="Generator"
-		button2=""
-		href1="/generator"
-		href2=""
+		home='active'
+		generator=''
 		/>
 
 
@@ -78,7 +75,11 @@ import Body from '../components/body.astro';
 
 .omsidan {
 	@apply bg-gray-200;
-	color: #000;
+	background-image: url("../../public/xtremefit.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #b0b;
     grid-row: 2 / 3;
     padding: 20px 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -95,8 +96,10 @@ import Body from '../components/body.astro';
     grid-row: 3 / 20;
     display: grid;
     padding: 30px 100px;
-    background-color: #;
-
+    background-image: url("../../public/xtremefit.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
