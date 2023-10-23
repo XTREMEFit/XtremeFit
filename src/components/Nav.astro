@@ -8,22 +8,14 @@ export interface Props {
 const { home, generator} = Astro.props;
 ---
 
-<div
-    class="flex justify-center items-center bg-[#333] overflow-hidden"
-    id="myTopnav"
->
+<div class="flex justify-center items-center bg-[#333] overflow-hidden"
+    id="myTopnav">
     <img
-        src="../../public/logo_x.png"
-        alt="home"
-        class="h-14 w-14 hover:cursor-pointer absolute left-0"
-    />
+        src="../../public/logo_x.png" alt="home" class="mt-2 h-[4rem] w-24 hover:cursor-pointer absolute left-0"/>
     <a href="/" class={home}>Home</a>
     <a href="/generator" class={generator}>Generator</a>
     <a href="#about">About</a>
-    <i class="fa fa-bars"></i>
 </div>
-
-<script></script>
 
 <style>
     a {
@@ -33,22 +25,5 @@ const { home, generator} = Astro.props;
     a.active {
         background-color: #04aa6d;
         color: white;
-    }
-
-    @media screen and (max-width: 600px) {
-        a:not(:first-child) {
-            display: none;
-        }
-        a.icon {
-            float: right;
-            display: block;
-        }
-    }
-
-    img{
-        margin-top: 0.5rem;
-        
-        height: 4rem;
-        width: 6rem;
     }
 </style>
