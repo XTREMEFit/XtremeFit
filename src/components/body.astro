@@ -1,0 +1,79 @@
+---
+export interface Props {
+    button1: string;
+    href1: string;
+    href2: string;
+    info: string;
+}
+
+const { href1, href2, button1, info} = Astro.props;
+---
+	
+	<slot />
+	
+	
+			
+	<div class=" wrapper">
+	
+		<a href="/generator" class=" wrapper__card">
+			<div class=" wrapper__card__img "> </div>
+			<p class=" wrapper__card__text">{button1}</p>
+		</a>
+		
+    </div>
+	
+		
+<style>
+	
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+	body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content repeat(17, 1fr) min-content;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.omsidan {
+    background-color: #C7D36F;
+    grid-row: 2 / 3;
+    padding: 20px 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.wrapper {
+    grid-row: 3 / 20;
+    display: grid;
+    padding: 30px 60px;
+    background-color: #FCF9C6;
+
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    min-height: 600px;
+}
+
+
+.wrapper__card {
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    background-color: #E0DECA;
+    height: 300px;
+    padding: 10px;
+}
+
+.wrapper__card__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+

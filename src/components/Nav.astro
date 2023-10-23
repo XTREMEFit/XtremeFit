@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  button1: string;
-  button2: string;
-  href1: string;
-  href2: string;
+    button1: string;
+    button2: string;
+    href1: string;
+    href2: string;
 }
 
 const { href1, href2, button1, button2 } = Astro.props;
@@ -20,43 +20,48 @@ const { href1, href2, button1, button2 } = Astro.props;
   <a href={href1} class="button1 button_mall">{button1}</a>
   <a href={href2} class="button_mall">{button2}</a>
 </div> -->
-
-<div class="flex justify-center items-center bg-[#333] overflow-hidden" id="myTopnav">
-  <img
-    src="../../public/favicon.svg"
-    alt="home"
-    class="h-14 w-14 hover:cursor-pointer absolute left-0"
-  />
-  <a href="/" class="active">Home</a>
-  <a href={href1}>{button1}</a>
-  <a href={href2}>{button2}</a>
-  <a href="#about">About</a>
+<div
+    class="flex justify-center items-center bg-[#333] overflow-hidden"
+    id="myTopnav"
+>
+    <img
+        src="../../public/logo_x.png"
+        alt="home"
+        class="h-14 w-14 hover:cursor-pointer absolute left-0"
+    />
+    <a href="/" class="active">Home</a>
+    <a href={href1}>{button1}</a>
+    <a href={href2}>{button2}</a>
+    <a href="#about">About</a>
     <i class="fa fa-bars"></i>
-  </a>
 </div>
 
-  <script>
-  
-  </script>
+<script></script>
 
 <style>
+    a {
+        @apply block text-[#f2f2f2] text-center px-[16px] py-[14px] no-underline text-[17px] hover:bg-[#ddd] hover:text-[black];
+    }
 
-a {
-  @apply float-left block text-[#f2f2f2] text-center px-[16px] py-[14px] no-underline text-[17px] hover:bg-[#ddd] hover:text-[black]
-}
+    a.active {
+        background-color: #04aa6d;
+        color: white;
+    }
 
+    @media screen and (max-width: 600px) {
+        a:not(:first-child) {
+            display: none;
+        }
+        a.icon {
+            float: right;
+            display: block;
+        }
+    }
 
-a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-@media screen and (max-width: 600px) {
-  a:not(:first-child) {display: none;}
-  a.icon {
-    float: right;
-    display: block;
-  }
-}
-
+    img{
+        margin-top: 0.5rem;
+        
+        height: 4rem;
+        width: 6rem;
+    }
 </style>
