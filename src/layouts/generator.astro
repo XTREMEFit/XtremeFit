@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Nav.astro';
-import Button from '../components/Button.astro';
+import Footer from '../components/Footer.astro';
+import Val from '../components/Val.astro'
+
 const { content } = Astro.props;
 ---
 
@@ -11,16 +13,76 @@ const { content } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{content.title}</title>
 	</head>
-	<body>
-        <Navbar
-        button1='we are in the genarator'
-        href1='/'
-        button2='aron hahahah'
-        href2=''
-        >
-        <Button>dawdaw</Button>
-        
+	
+	<body class="bg-gray-400">
+		<Navbar 
+		button1="Generator"
+		button2=""
+		href1="/generator"
+		href2=""
+		/>
 
-		<slot />
+
+
+				
+		<Val>
+	<!-- <div class=" wrapper">
+		<a href="/generator" class=" wrapper__card">
+			<div class=" wrapper__card__img "> </div>
+			<p class=" wrapper__card__text">generera</p>
+		</a>
+		
+    </div> -->
+	
+		
+		<Footer></Footer>
+<style>
+	
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+	body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content repeat(17, 1fr) min-content;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.wrapper {
+    grid-row: 2 / 20;
+    display: grid;
+    padding: 30px 100px;
+    background-color: #;
+
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.wrapper__card {
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    background-color: #E0DECA;
+    height: 300px;
+    padding: 10px;
+}
+
+.wrapper__card__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+
+
+
+</style>
 	</body>
 </html>
