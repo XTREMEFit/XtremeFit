@@ -50,23 +50,53 @@ import Footer from "../components/Footer.astro";
                 XTREMEFIT - din väg till extrem fitness!
             </p>
         </div>
-		<div class="wrapper">
-			<ul role="list" class="link-card-grid">
-				<Card href="" title="Noa" body="noa is a ultra super pro master grandmaster supreme genius programmer who made this site"/>
-				<Card href="/generator" title="Kevin" body="kevin is a elite expert programmer and made the genetor" />
-				<Card href=""title="Araz" body="araz noob programmer and gave noa the links to use in the footer"/>
-				<Card href="" title="Kassim" body="kassim is ai user and made the logo and text for the website "/>
-			</ul>
-		</div>
+        <div class="wrapper">
+            <a href="/generator" class="start-button">Börja generera ditt träningsprogram</a>
+            <ul role="list" class="link-card-grid">
+                <Card
+                    href=""
+                    title="Noa"
+                    body="noa is a ultra super pro master grandmaster supreme genius programmer who made this site"
+                />
+                <Card
+                    href="/generator"
+                    title="Kevin"
+                    body="kevin is a elite expert programmer and made the genetor"
+                />
+                <Card
+                    href=""
+                    title="Araz"
+                    body="araz noob programmer and gave noa the links to use in the footer"
+                />
+                <Card
+                    href=""
+                    title="Kassim"
+                    body="kassim is ai user and made the logo and text for the website "
+                />
+            </ul>
+        </div>
 
         <Footer />
         <style>
-			.link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
-        gap: 1rem;
-        padding: 0;
-    }
+			.start-button{
+				background-color: #333;
+				color: white;
+				width: fit-content;
+				padding: 20px;
+				border-radius: 10px;
+				font-size: x-large;
+				align-self: center;
+			}
+			.start-button:hover{
+				cursor: pointer;
+				background-color: #04aa6d;
+			}
+            .link-card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+                gap: 1rem;
+                padding: 0;
+            }
             *,
             *::before,
             *::after {
@@ -101,18 +131,18 @@ import Footer from "../components/Footer.astro";
 
             .wrapper {
                 grid-row: 3 / 20;
-                display: grid;
+                display: flex;
+				justify-content: center;
+				flex-direction: column;
                 padding: 30px 100px;
-
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 20px;
+				gap: 200px;
+                /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
             }
 
             .wrapper__card {
                 text-decoration: none;
                 color: white;
                 border-radius: 7px;
-                /* background-color: #E0DECA; */
                 height: 300px;
                 width: 50rem;
                 margin-left: 30rem;
