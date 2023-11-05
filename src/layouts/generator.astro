@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Nav.astro';
-import Button from '../components/Button.astro';
+import Footer from '../components/Footer.astro';
+import Val from '../components/Val.astro'
+
 const { content } = Astro.props;
 ---
 
@@ -11,16 +13,26 @@ const { content } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{content.title}</title>
 	</head>
-	<body>
-        <Navbar
-        button1='we are in the genarator'
-        href1='/'
-        button2='aron hahahah'
-        href2=''
-        >
-        <Button>dawdaw</Button>
-        
+	
+	<body class="bg-gray-400">
+		<Navbar 
+		home=''
+		generator='active'
+		/>
 
-		<slot />
+
+
+				
+		<Val>
+	<!-- <div class=" wrapper">
+		<a href="/generator" class=" wrapper__card">
+			<div class=" wrapper__card__img "> </div>
+			<p class=" wrapper__card__text">generera</p>
+		</a>
+		
+    </div> -->
+	
+		
+		<Footer></Footer>
 	</body>
 </html>
