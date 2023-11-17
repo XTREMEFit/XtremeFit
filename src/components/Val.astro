@@ -282,14 +282,44 @@
                     let sets, reps;
 
                     if (trainingGoal === "strength") {
-                        sets = intensity === "Låg" ? 4 : intensity === "medel" ? 5 : intensity === "Hög" ? 6: 5;
-                        reps = 5;
+                        if (intensity === "Låg: 30-40% ansträngning") {
+                            sets = 4
+                            reps = 5
+                        }
+                        if (intensity === "Medel: 50-70% ansträngning") {
+                            sets = 5
+                            reps = 5
+                        }
+                        if (intensity === "Hög: 80-90% ansträngning") {
+                            sets = 6
+                            reps = 5
+                        }
                     } else if (trainingGoal === "hypertrophy") {
-                        sets = intensity === "Låg" ? 2 : intensity === "medel" ? 3 : intensity === "Hög" ? 4: 3;
-                        reps = intensity === "Låg" ? 8 : intensity === "medel" ? 10 : intensity === "Hög" ? 12: 10;
+                        if (intensity === "Låg: 30-40% ansträngning") {
+                            sets = 2
+                            reps = 8
+                        }
+                        if (intensity === "Medel: 50-70% ansträngning") {
+                            sets = 3
+                            reps = 10
+                        }
+                        if (intensity === "Hög: 80-90% ansträngning") {
+                            sets = 4
+                            reps = 12
+                        }
                     } else if (trainingGoal === "endurance") {
-                        sets = 3;
-                        reps = intensity === "Låg" ? 15 : intensity === "medel" ? 18 : intensity === "Hög" ? 20: 18;
+                        if (intensity === "Låg: 30-40% ansträngning") {
+                            sets = 3
+                            reps = 15
+                        }
+                        if (intensity === "Medel: 50-70% ansträngning") {
+                            sets = 3
+                            reps = 18
+                        }
+                        if (intensity === "Hög: 80-90% ansträngning") {
+                            sets = 3
+                            reps = 20
+                        }
                     } else {
                         sets = reps = "Okänt";
                     }
