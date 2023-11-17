@@ -105,7 +105,7 @@
                 >
                 <label
                     ><input type="checkbox" name="muskelgrupper" value="Rygg" />
-                    Rygg</label
+                     Rygg</label
                 >
                 <label
                     ><input
@@ -130,16 +130,24 @@
                 >
                 <label
                     ><input type="checkbox" name="muskelgrupper" value="Abs" />
-                    Abs</label
+                     Abs</label
                 >
                 <label
                     ><input type="checkbox" name="muskelgrupper" value="Ben" />
-                    Ben</label
+                     Ben</label
                 >
             </div>
             <div class="form-group">
                 <label for="tid">Tillgänglig tid (minuter):</label>
                 <input type="number" id="tid" name="tid" required />
+            </div>
+            <div class="form-group">
+                <label for="training-goal">Träningsmål:</label>
+                <select id="training-goal" name="training-goal">
+                    <option value="strength">Styrka</option>
+                    <option value="hypertrophy">Hypertrofi</option>
+                    <option value="endurance">Uthållighet</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="intensitet">Önskad intensitet:</label>
@@ -150,6 +158,7 @@
                     step="50"
                     list="nivå"
                 />
+
                 <datalist id="nivå">
                     <option value="0" label="Låg" class="bar"></option>
                     <option value="50" label="Medel" class="bar1"></option>
@@ -173,7 +182,6 @@
                 );
                 const intensityValue = document.getElementById("intensitet");
 
-                // JSON-databas med övningar och muskelgrupper
                 const exercisesDatabase = {
                     Bröst: ["Benchpress", "Chest Flyes", "Incline Benchpress"],
                     Rygg: ["Lat Pulldown", "Pull-ups", "Rows"],
@@ -203,18 +211,18 @@
                     const tid = form.tid.value;
                     const intensitetValue = form.intensitet.value;
                     const intensitet = getIntensityLabel(intensitetValue);
+                    const trainingGoal = form["training-goal"].value;
 
-                    // Hämta övningar baserat på de valda muskelgrupperna
                     const selectedExercises = selectedMuscleGroups.flatMap(
                         (muskelgrupp) => exercisesDatabase[muskelgrupp],
                     );
 
-                    // Här kan du implementera din egen logik för att generera träningsprogram baserat på användarpreferenser
                     const träningsprogram = generateTrainingProgram(
                         selectedMuscleGroups,
                         tid,
                         intensitet,
                         selectedExercises,
+                        trainingGoal,
                     );
 
                     displayTrainingProgram(träningsprogram);
@@ -229,7 +237,7 @@
                     } else if (intensitetValue == 100) {
                         return "Hög";
                     } else {
-                        return "Okänd"; // Om värdet inte matchar något av de kända värdena
+                        return "Okänd";
                     }
                 }
 
@@ -238,20 +246,50 @@
                     tid,
                     intensitet,
                     selectedExercises,
+                    trainingGoal,
                 ) {
-                    // Här kan du använda selectedExercises för att inkludera övningarna i träningsprogrammet
                     let program = `Ditt träningsprogram:\nMuskelgrupper: ${selectedMuscleGroups.join(
                         ", ",
-                    )}\nTräningstid: ${tid} minuter\nÖnskad intensitet: ${intensitet}\n\n`;
+                    )}\nTräningstid: ${tid} minuter\nÖnskad intensitet: ${intensitet}\nTräningsmål: ${trainingGoal}\n\n`;
 
                     if (selectedExercises.length > 0) {
                         program += "Övningar:\n";
                         selectedExercises.forEach((exercise, index) => {
-                            program += `${index + 1}. ${exercise}\n`;
+                            const setsReps = getSetsReps(
+                                trainingGoal,
+                                intensitet,
+                            );
+                            program += `${
+                                index + 1
+                            }. ${exercise} - ${setsReps}\n`;
                         });
                     }
 
                     return program;
+                }
+
+                function getSetsReps(trainingGoal, intensity) {
+                    let sets, reps;
+
+                    if (trainingGoal === "strength") {
+                        sets = intensity === "Låg" ? 4 : intensity === "medel" ? 5 : intensity === "Hög" ? 6: 5;
+                        reps = 5;
+                    } else if (trainingGoal === "hypertrophy") {
+                        sets = intensity === "Låg" ? 2 : intensity === "medel" ? 3 : intensity === "Hög" ? 4: 3;
+                        reps = intensity === "Låg" ? 8 : intensity === "medel" ? 10 : intensity === "Hög" ? 12: 10;
+                    } else if (trainingGoal === "endurance") {
+                        sets = 3;
+                        reps = intensity === "Låg" ? 15 : intensity === "medel" ? 18 : intensity === "Hög" ? 20: 18;
+                    } else {
+                        sets = reps = "Okänt";
+                    }
+
+                    return `${sets} set x ${reps} reps`;
+
+                }
+
+                function getRandomNumber(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
                 }
 
                 function displayTrainingProgram(träningsprogram) {
@@ -260,7 +298,7 @@
                     );
 
                     if (träningsprogram) {
-                        programList.innerHTML = ""; // Rensa tidigare resultat
+                        programList.innerHTML = "";
                         träningsprogram.split("\n").forEach((item) => {
                             const listItem = document.createElement("li");
                             listItem.textContent = item;
