@@ -96,43 +96,49 @@
         <form id="preferences-form">
             <div class="form-group">
                 <label>Muskelgrupper:</label>
-                <label
-                    ><input
+                <label>
+                    <input
                         type="checkbox"
                         name="muskelgrupper"
                         value="Bröst"
-                    /> Bröst</label
-                >
-                <label
-                    ><input type="checkbox" name="muskelgrupper" value="Rygg" /> Rygg</label>
-                <label
-                    ><input
+                    /> Bröst</label>
+                <label>
+                    <input 
+                    type="checkbox" 
+                    name="muskelgrupper" 
+                    value="Rygg" 
+                    /> Rygg</label>
+                <label>
+                    <input
                         type="checkbox"
                         name="muskelgrupper"
                         value="Biceps"
-                    /> Biceps</label
-                >
-                <label
-                    ><input
+                    /> Biceps</label>
+                <label>
+                    <input
                         type="checkbox"
                         name="muskelgrupper"
                         value="Triceps"
-                    /> Triceps</label
-                >
-                <label
-                    ><input
+                    /> Triceps</label>
+                <label>
+                    <input
                         type="checkbox"
                         name="muskelgrupper"
                         value="Axlar"
                     /> Axlar</label>
-                <label
-                    ><input type="checkbox" name="muskelgrupper" value="Abs" /> Abs</label>
-                <label
-                    ><input type="checkbox" name="muskelgrupper" value="Ben" /> Ben</label>
+                <label>
+                    <input type="checkbox" 
+                    name="muskelgrupper" 
+                    value="Abs" 
+                    /> Abs</label>
+                <label>
+                    <input type="checkbox" 
+                    name="muskelgrupper" 
+                    value="Ben" 
+                    /> Ben</label>
             </div>
             <div class="form-group">
                 <label for="tid">Tillgänglig tid:</label>
-                <!-- <input type="select" id="tid" name="tid" required /> -->
                 <select name="tid" id="tid">
                     <option value="> 30">Mycket kort tid</option>
                     <option value="30">30 mins</option>
@@ -311,5 +317,17 @@
                 }
             });
         </script>
+
+<style>
+    #tid{
+        border: 1px solid #b6b4b4;
+        border-radius: 5px;
+    }
+
+    #training-goal{
+        border: 1px solid #b6b4b4;
+        border-radius: 5px;
+    }
+</style>
     </body>
 </html>
