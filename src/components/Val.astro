@@ -88,15 +88,13 @@
                         type="checkbox"
                         name="muskelgrupper"
                         value="Bröst"
-                    /> Bröst</label>
-                <label>
-                    <input 
-                    type="checkbox" 
-                    name="muskelgrupper" 
-                    value="Rygg"
-                    /> Rygg</label>
-                <label>
-                    <input
+                    /> Bröst</label
+                >
+                <label
+                    ><input type="checkbox" name="muskelgrupper" value="Rygg" />
+                    Rygg</label>
+                <label
+                    ><input
                         type="checkbox"
                         name="muskelgrupper"
                         value="Biceps"
@@ -112,19 +110,16 @@
                         type="checkbox"
                         name="muskelgrupper"
                         value="Axlar"
-                    /> Axlar</label>
-                <label>
-                    <input 
-                    type="checkbox" 
-                    name="muskelgrupper" 
-                    value="Abs"
-                    /> Abs</label>
-                <label>
-                    <input 
-                    type="checkbox" 
-                    name="muskelgrupper" 
-                    value="Ben"
-                    /> Ben</label>
+                    /> Axlar</label
+                >
+                <label
+                    ><input type="checkbox" name="muskelgrupper" value="Abs" />
+                    Abs</label
+                >
+                <label
+                    ><input type="checkbox" name="muskelgrupper" value="Ben" />
+                    Ben</label
+                >
             </div>
             <div class="form-group">
                 <label for="tid">Tillgänglig tid:</label>
@@ -257,7 +252,7 @@
                 }
                 function getSetsReps(trainingGoal, intensity) {
                     let sets, reps;
-                    if (trainingGoal === "Styrka") {
+                    if (trainingGoal === "strength") {
                         if (intensity === "Låg: 30-40% ansträngning") {
                             sets = 4
                             reps = 5
@@ -270,7 +265,7 @@
                             sets = 6
                             reps = 5
                         }
-                    } else if (trainingGoal === "Hypertrofi") {
+                    } else if (trainingGoal === "hypertrophy") {
                         if (intensity === "Låg: 30-40% ansträngning") {
                             sets = 2
                             reps = 8
@@ -283,7 +278,7 @@
                             sets = 4
                             reps = 12
                         }
-                    } else if (trainingGoal === "Uthållighet") {
+                    } else if (trainingGoal === "endurance") {
                         if (intensity === "Låg: 30-40% ansträngning") {
                             sets = 3
                             reps = 15
