@@ -2,10 +2,10 @@
 export interface Props {
     home: string;
     generator: string;
-
+    about: string;
 }
 
-const { home, generator} = Astro.props;
+const { home, generator, about} = Astro.props;
 ---
 
 <div class="flex justify-center items-center bg-[#333] overflow-hidden"
@@ -14,7 +14,7 @@ const { home, generator} = Astro.props;
         src="../../public/logo_x.png" alt="home" class="mt-2 h-[4rem] w-24 hover:cursor-pointer absolute left-0"/>
     <a href="/" class={home}>Home</a>
     <a href="/generator" class={generator}>Generator</a>
-    <a href="#about">About</a>
+    <a href="/about" class={about}>About</a>
 </div>
 
 <style>

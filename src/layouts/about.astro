@@ -1,0 +1,77 @@
+---
+const { content } = Astro.props;
+import Navbar from "../components/Nav.astro";
+import Val from "../components/Val.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/logo_x.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Xtremefit</title>
+    </head>
+    <body class="bg-gray-500">
+        <Navbar home="" generator="" about="active"/>
+        <div class="wrapper">
+            <div id="omoss" class="omsidan">
+                <p>
+                    XTREMEFIT är din träningsgenerator som tar din träning till
+                    nästa nivå. Oavsett om du är en nybörjare som vill komma
+                    igång med träningen eller en erfaren atlet som vill utmana
+                    dig själv, har vi det perfekta träningsprogrammet för dig.
+                </p><p>
+                    Med XTREMEFIT kan du skapa anpassade träningsprogram som är
+                    skräddarsydda efter dina mål, fitnessnivå och tillgänglig
+                    tid. Vår enkla och intuitiva plattform gör det enkelt att
+                    planera och följa ditt träningsprogram. Du kommer att ha
+                    tillgång till en mängd olika övningar och träningsrutiner,
+                    så du kommer aldrig att tröttna på din träning.
+                </p><p>
+                    Oavsett om du vill bygga muskler, bränna fett eller helt
+                    enkelt förbättra din hälsa, så är XTREMEFIT här för att
+                    stödja dig på din träningsresa. Kom igång redan idag och
+                    upplev fördelarna med en personlig träningsupplevelse som är
+                    skräddarsydd för dig.
+                </p><p>
+                    
+                </p>
+                <p>XTREMEFIT - din väg till extrem fitness!</p>
+
+                <style>
+                    .wrapper {
+                        color: white;
+                grid-row: 2 / 3;
+                padding: 20px 100px;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                line-height: 30px;
+                width: 55rem;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 30rem;
+
+                    }
+                    .wrapper div {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 20px;
+                        column-gap: 500px;
+                        align-items: center;
+                    }
+                    h1 {
+                        font-size: larger;
+                        color: white;
+                    }
+                    p,
+                    a {
+                        color: white;
+                    }
+                </style>
+            </div>
+        </div>
+    </body>
+</html>
