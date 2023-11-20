@@ -4,9 +4,7 @@ import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Navbar from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Modal from "../components/modal.astro";
 ---
 
 <html lang="sv">
@@ -45,133 +43,30 @@ import Footer from "../components/Footer.astro";
             <p>XTREMEFIT - din väg till extrem fitness!</p>
         </div>
         <div class="wrapper">
-            <a href="/generator" class="start-button">Börja generera ditt träningsprogram</a>
+            <a href="/generator" class="start-button"
+                >Börja generera ditt träningsprogram</a
+            >
             <ul role="list" class="link-card-grid">
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />                
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />                
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />                
-                <Card
-                    href=""
-                    title=""
-                    body=""
-                />
+                <Card href="" title="" body="" />
+                <Modal href="test-vid.mp4" title="" body="" />
             </ul>
         </div>
         <Footer />
 
-
-
         <style>
-            .start-button{
-				background-color: #333;
-				color: white;
-				width: fit-content;
-				padding: 20px;
-				border-radius: 10px;
-				font-size: x-large;
-				align-self: center;
-			}
-			.start-button:hover{
-				cursor: pointer;
-				background-color: #04aa6d;
-			}
+            .start-button {
+                background-color: #333;
+                color: white;
+                width: fit-content;
+                padding: 20px;
+                border-radius: 10px;
+                font-size: x-large;
+                align-self: center;
+            }
+            .start-button:hover {
+                cursor: pointer;
+                background-color: #04aa6d;
+            }
             .link-card-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr));
@@ -216,11 +111,11 @@ import Footer from "../components/Footer.astro";
             .wrapper {
                 grid-row: 3 / 20;
                 display: flex;
-				justify-content: center;
-				flex-direction: column;
+                justify-content: center;
+                flex-direction: column;
                 padding: 30px 100px;
 
-				gap: 200px;
+                gap: 200px;
                 /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
             }
 
