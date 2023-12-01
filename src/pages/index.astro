@@ -16,43 +16,44 @@ import Modal from "../components/modal.astro";
         <title>Xtremefit</title>
     </head>
     <body class="bg-gray-500">
-        <Navbar home="active" generator="" />
+        <Navbar home="active" generator="" about="" />
 
-<div class="omsidan_wrapper">
-    <div id="omoss" class="omsidan">
-        <h1 class="text-xl">
-            Välkommen till XTREMEFIT - din ultimata träningspartner!
-        </h1>
-        <p>
-            XTREMEFIT är din träningsgenerator som tar din träning till
-            nästa nivå. Oavsett om du är en nybörjare som vill komma igång
-            med träningen eller en erfaren atlet som vill utmana dig själv,
-            har vi det perfekta träningsprogrammet för dig.
-        </p><p>
-            Med XTREMEFIT kan du skapa anpassade träningsprogram som är
-            skräddarsydda efter dina mål, fitnessnivå och tillgänglig tid.
-            Vår enkla och intuitiva plattform gör det enkelt att planera och
-            följa ditt träningsprogram. Du kommer att ha tillgång till en
-            mängd olika övningar och träningsrutiner, så du kommer aldrig
-            att tröttna på din träning.
-        </p><p>
-                Oavsett om du vill bygga muskler, bränna fett eller helt enkelt
-                förbättra din hälsa, så är XTREMEFIT här för att stödja dig på
-                din träningsresa. Kom igång redan idag och upplev fördelarna med
-                en personlig träningsupplevelse som är skräddarsydd för dig.
-            </p>
-            <p>XTREMEFIT - din väg till extrem fitness!</p>
+        <div class="omsidan_wrapper">
+            <div id="omoss" class="omsidan">
+                <h1 class="text-xl">
+                    Välkommen till XTREMEFIT - din ultimata träningspartner!
+                </h1>
+                <p>
+                    XTREMEFIT är din träningsgenerator som tar din träning till
+                    nästa nivå. Oavsett om du är en nybörjare som vill komma
+                    igång med träningen eller en erfaren atlet som vill utmana
+                    dig själv, har vi det perfekta träningsprogrammet för dig.
+                </p><p>
+                    Med XTREMEFIT kan du skapa anpassade träningsprogram som är
+                    skräddarsydda efter dina mål, fitnessnivå och tillgänglig
+                    tid. Vår enkla och intuitiva plattform gör det enkelt att
+                    planera och följa ditt träningsprogram. Du kommer att ha
+                    tillgång till en mängd olika övningar och träningsrutiner,
+                    så du kommer aldrig att tröttna på din träning.
+                </p><p>
+                    Oavsett om du vill bygga muskler, bränna fett eller helt
+                    enkelt förbättra din hälsa, så är XTREMEFIT här för att
+                    stödja dig på din träningsresa. Kom igång redan idag och
+                    upplev fördelarna med en personlig träningsupplevelse som är
+                    skräddarsydd för dig.
+                </p>
+                <p>XTREMEFIT - din väg till extrem fitness!</p>
+            </div>
         </div>
-    </div>
-
 
         <div class="wrapper">
             <a href="/generator" class="start-button"
-            >Börja generera ditt träningsprogram</a
+                >Börja generera ditt träningsprogram</a
             >
             <ul role="list" class="link-card-grid">
-                <Card href="" title="" body="" />
-                <Modal href="test-vid.mp4" title="" body="" />
+                <Card href="test-vid.mp4" title="awdadw" body="dawdw" />
+                <Modal href="test-vid.mp4" title="awdwdw"  />
+                <Modal href="test-vid.mp4" title="adwwddw"  />
             </ul>
         </div>
         <Footer />
@@ -66,6 +67,7 @@ import Modal from "../components/modal.astro";
                 border-radius: 10px;
                 font-size: x-large;
                 align-self: center;
+                
             }
             .start-button:hover {
                 cursor: pointer;
@@ -90,9 +92,8 @@ import Modal from "../components/modal.astro";
                 grid-template-rows: min-content min-content repeat(12, 1fr) min-content;
                 min-height: 100vh;
                 font-family: Arial, Helvetica, sans-serif;
-                
             }
-            .omsidan_wrapper{
+            .omsidan_wrapper {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -109,7 +110,6 @@ import Modal from "../components/modal.astro";
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
-                
             }
 
             .wrapper {
@@ -120,7 +120,6 @@ import Modal from "../components/modal.astro";
                 padding: 30px 100px;
 
                 gap: 200px;
-                /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
             }
 
             .wrapper__card {
@@ -147,12 +146,12 @@ import Modal from "../components/modal.astro";
 
             @media screen (max-width: 900px;) {
                 /* .omsidan_wrapper{ */
-                    
-                
-                .omsidan{
+
+                .omsidan {
                     width: fit-content;
                 }
             }
+
         </style>
     </body>
 </html>
