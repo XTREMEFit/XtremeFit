@@ -14,7 +14,12 @@ import Modal from "../components/modal.astro";
         <link rel="icon" type="image/svg+xml" href="/logo_x.png" />
         <meta name="generator" content={Astro.generator} />
         <title>Xtremefit</title>
+        <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
     </head>
+    
     <body class="bg-gray-500">
         <Navbar home="active" generator="" about="" />
 
@@ -52,7 +57,7 @@ import Modal from "../components/modal.astro";
             >
             <ul role="list" class="link-card-grid">
                 <Card href="" title="" body="" />
-                <Modal href="inclinebench.mp4" title="" />
+                <Modal href="inclinebench.mp4" title="Incline Benchpress" />
             </ul>
         </div>
         <Footer />
