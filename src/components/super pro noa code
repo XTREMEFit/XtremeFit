@@ -1,0 +1,345 @@
+---
+// Component Imports
+// import Button from "../components/Button.astro";
+// import Card from "../components/Card.astro";
+import Navbar from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+// import Modal from "../components/modal.astro";
+---
+
+<html lang="sv">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/logo_x.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Xtremefit</title>
+    </head>
+    <body class="bg-gray-500">
+        <Navbar home="active" generator="" about="" />
+
+        <div class="omsidan_wrapper">
+            <div id="omoss" class="omsidan">
+                <h1 class="text-xl">
+                    Välkommen till XTREMEFIT - din ultimata träningspartner!
+                </h1>
+                <p>
+                    XTREMEFIT är din träningsgenerator som tar din träning till
+                    nästa nivå. Oavsett om du är en nybörjare som vill komma
+                    igång med träningen eller en erfaren atlet som vill utmana
+                    dig själv, har vi det perfekta träningsprogrammet för dig.
+                </p><p>
+                    Med XTREMEFIT kan du skapa anpassade träningsprogram som är
+                    skräddarsydda efter dina mål, fitnessnivå och tillgänglig
+                    tid. Vår enkla och intuitiva plattform gör det enkelt att
+                    planera och följa ditt träningsprogram. Du kommer att ha
+                    tillgång till en mängd olika övningar och träningsrutiner,
+                    så du kommer aldrig att tröttna på din träning.
+                </p><p>
+                    Oavsett om du vill bygga muskler, bränna fett eller helt
+                    enkelt förbättra din hälsa, så är XTREMEFIT här för att
+                    stödja dig på din träningsresa. Kom igång redan idag och
+                    upplev fördelarna med en personlig träningsupplevelse som är
+                    skräddarsydd för dig.
+                </p>
+                <p>XTREMEFIT - din väg till extrem fitness!</p>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <a href="/generator" class="start-button"
+                >Börja generera ditt träningsprogram</a
+            >
+            <ul role="list" class="link-card-grid">
+                <!-- <div class="dropdown">
+                    <button class="dropbtn">Bröst</button>
+                    <div class="dropdown-content">
+                    </div>
+                    </div> -->
+
+                <button id="inclinebench_btn" class="btn">
+                    <h2>InclineBench</h2>
+                </button>
+                <div id="inclinebench" class="modal">
+                    <div class="modal-content">
+                        <span  class="close" 
+                            >&times;</span
+                        >
+                        <p>InclineBench</p>
+                        <video controls >
+                            <source src="/inclinebench.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <button class="btn" id="test1_btn">
+                    <h2>TEST1</h2>
+                </button>
+                <div id="test1" class="modal">
+                    <div class="modal-content">
+                        <span class="close" 
+                            >&times;</span
+                        >
+                        <p>TESt1 TEXT</p>
+                        <video controls >
+                            <source src="/test-vid.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+
+                <button class="btn" id="test2_btn">
+                    <h2>TEST2</h2>
+                </button>
+                <div id="test2" class="modal">
+                    <div class="modal-content">
+                        <span class="close" 
+                            >&times;</span
+                        >
+                        <p>TEST2 TEXT</p>
+                        <video controls >
+                            <source src="/test-vid.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+
+            </ul>
+        </div>
+        <Footer />
+
+        <script>
+            let isActive = null;
+
+            function displayBlock(id) {
+                id.style.display = "block";
+                isActive = id;
+                console.log("displayblock         id " + id);
+                console.log("displayblock       isactive " + isActive);
+            }
+            
+            function displayNone(id) {
+                id.style.display = "none";
+                console.log("displaynone     id " + id);
+                console.log("displaynone     isactive " +isActive);
+            }
+            
+            window.onclick = function (event) {
+                if (event.target == isActive) {
+                    isActive.style.display = "none";
+                    console.log("displaynone      isactive " + isActive);
+                }
+            };
+
+
+
+
+            let close = document.querySelector(".close");
+            close.addEventListener("click", function () {
+                displayNone(isActive);
+                console.log("close click      isactive" + isActive);
+            });
+
+
+
+
+            var inclinebench = document.getElementById("inclinebench");
+            let inclinebench_btn = document.getElementById("inclinebench_btn");
+            inclinebench_btn.addEventListener("click", function () {
+                displayBlock(inclinebench);
+            });
+
+
+            var test1 = document.getElementById("test1");
+            let test1_btn = document.getElementById("test1_btn");
+            test1_btn.addEventListener("click", function () {
+                displayBlock(test1);
+            });
+
+            var test2 = document.getElementById("test2");
+            let test2_btn = document.getElementById("test2_btn");
+            test2_btn.addEventListener("click", function () {
+                displayBlock(test2);
+            });
+        </script>
+    </body>
+</html>
+
+<style>
+    h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+    .btn:is(:hover, :focus-within) {
+        background-color: #534243;
+        border: 2px solid #e23342;
+    }
+    .btn {
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        display: flex;
+        border-radius: 0.5rem;
+        background-color: #444;
+    }
+    .btn {
+        border: 3px solid #e2334200;
+        color: white;
+        padding: 12px 16px;
+        cursor: pointer;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .dropbtn {
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        display: flex;
+        border-radius: 0.5rem;
+        background-color: #444;
+        box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        -webkit-box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .start-button {
+        background-color: #333;
+        color: white;
+        width: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: x-large;
+        align-self: center;
+    }
+    .start-button:hover {
+        cursor: pointer;
+        background-color: #04aa6d;
+    }
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr));
+        gap: 1rem;
+        padding: 0;
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content repeat(12, 1fr) min-content;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .omsidan_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .omsidan {
+        color: white;
+        grid-row: 2 / 3;
+        padding: 20px 100px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        line-height: 30px;
+        width: 55rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper {
+        grid-row: 3 / 20;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 100px;
+
+        gap: 200px;
+    }
+
+    .wrapper__card {
+        text-decoration: none;
+        color: white;
+        border-radius: 7px;
+        height: 300px;
+        width: 50rem;
+        margin-left: 30rem;
+        padding: 10px;
+    }
+
+    .wrapper__card__img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+        width: 100%;
+    }
+    .wrapper__card__text {
+        margin-top: -7rem;
+        margin-left: 15rem;
+        font-size: 5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        /* Your styles for smaller screens go here */
+        .omsidan {
+            width: fit-content;
+        }
+    }
+</style>
