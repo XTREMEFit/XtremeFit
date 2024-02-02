@@ -1,10 +1,7 @@
 ---
 // Component Imports
-import Button from "../components/Button.astro";
-import Card from "../components/Card.astro";
 import Navbar from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import Modal from "../components/modal.astro";
 ---
 
 <html lang="sv">
@@ -14,12 +11,15 @@ import Modal from "../components/modal.astro";
         <link rel="icon" type="image/svg+xml" href="/logo_x.png" />
         <meta name="generator" content={Astro.generator} />
         <title>Xtremefit</title>
-        <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+        <link
+            href="https://vjs.zencdn.net/8.6.1/video-js.css"
+            rel="stylesheet"
+        />
 
-<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"
+        ></script>
     </head>
-    
+
     <body class="bg-gray-500">
         <Navbar home="active" generator="" about="" />
 
@@ -55,108 +55,739 @@ import Modal from "../components/modal.astro";
             <a href="/generator" class="start-button"
                 >Börja generera ditt träningsprogram</a
             >
-            <ul role="list" class="link-card-grid">
-                <Card href="" title="" body="" />
-                <Modal href="Squats.mp4" title="" />
-                <Modal href="inclinebench.mp4" title="Incline Benchpress" />
-            </ul>
         </div>
-        <Footer />
+        <ul role="list" class="link-card-grid">
+            <div class="dropdown">
+                <button class="dropbtn">Bröst</button>
+                <div class="dropdown-content">
+                    <button id="inclinebench_btn" class="btn">
+                        <h2>InclineBench</h2>
+                    </button>
+                    <button id="benchpress_btn" class="btn">
+                        <h2>benchpress</h2>
+                    </button>
+                    <button id="chestflyes_btn" class="btn">
+                        <h2>chestflyes</h2>
+                    </button>
+                </div>
+            </div>
 
-        <style>
-            .start-button {
-                background-color: #333;
-                color: white;
-                width: fit-content;
-                padding: 20px;
-                border-radius: 10px;
-                font-size: x-large;
-                align-self: center;
-                
-            }
-            .start-button:hover {
-                cursor: pointer;
-                background-color: #04aa6d;
-            }
-            .link-card-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr));
-                gap: 1rem;
-                padding: 0;
-            }
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: min-content min-content repeat(12, 1fr) min-content;
-                min-height: 100vh;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            .omsidan_wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .omsidan {
-                color: white;
-                grid-row: 2 / 3;
-                padding: 20px 100px;
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                font-weight: bold;
-                line-height: 30px;
-                width: 55rem;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-            }
+            <div class="dropdown">
+                <button class="dropbtn">Rygg</button>
+                <div class="dropdown-content">
+                    <button id="rows_btn" class="btn">
+                        <h2>rows</h2>
+                    </button>
+                    <button class="btn" id="latpulldown_btn">
+                        <h2>latpulldown</h2>
+                    </button>
+                    <button class="btn" id="pullups_btn">
+                        <h2>pullups</h2>
+                    </button>
+                </div>
+            </div>
 
-            .wrapper {
-                grid-row: 3 / 20;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                padding: 30px 100px;
+            <div class="dropdown">
+                <button class="dropbtn">Biceps</button>
+                <div class="dropdown-content">
+                    <button id="inclinedumbbellcurls_btn" class="btn">
+                        <h2>inclinedumbbellcurls</h2>
+                    </button>
+                    <button id="hammercurls_btn" class="btn">
+                        <h2>hammercurls</h2>
+                    </button>
+                    <button id="preachercurls_btn" class="btn">
+                        <h2>preachercurls</h2>
+                    </button>
+                </div>
+            </div>
 
-                gap: 200px;
-            }
+            <div class="dropdown">
+                <button class="dropbtn">Triceps</button>
+                <div class="dropdown-content">
+                    <button id="dips_btn" class="btn">
+                        <h2>dips</h2>
+                    </button>
+                    <button id="overheadextensions_btn" class="btn">
+                        <h2>overheadextensions</h2>
+                    </button>
+                    <button id="tricepspushdown_btn" class="btn">
+                        <h2>tricepspushdown</h2>
+                    </button>
+                </div>
+            </div>
 
-            .wrapper__card {
-                text-decoration: none;
-                color: white;
-                border-radius: 7px;
-                height: 300px;
-                width: 50rem;
-                margin-left: 30rem;
-                padding: 10px;
-            }
+            <div class="dropdown">
+                <button class="dropbtn">Axlar</button>
+                <div class="dropdown-content">
+                    <button id="overheadpress_btn" class="btn">
+                        <h2>overheadpress</h2>
+                    </button>
+                    <button id="cablelateralraises_btn" class="btn">
+                        <h2>cablelateralraises</h2>
+                    </button>
+                    <button id="facepulls_btn" class="btn">
+                        <h2>facepulls</h2>
+                    </button>
+                </div>
+            </div>
 
-            .wrapper__card__img {
-                background-repeat: no-repeat;
-                background-size: cover;
-                height: 200px;
-                width: 100%;
-            }
-            .wrapper__card__text {
-                margin-top: -7rem;
-                margin-left: 15rem;
-                font-size: 5rem;
-            }
+            <div class="dropdown">
+                <button class="dropbtn">Abs</button>
+                <div class="dropdown-content">
+                    <button id="situps_btn" class="btn">
+                        <h2>situps</h2>
+                    </button>
+                    <button id="russiantwist_btn" class="btn">
+                        <h2>russiantwist</h2>
+                    </button>
+                    <button id="legraises_btn" class="btn">
+                        <h2>legraises</h2>
+                    </button>
+                </div>
+            </div>
 
-            @media screen (max-width: 900px;) {
-                /* .omsidan_wrapper{ */
+            <div class="dropdown">
+                <button class="dropbtn">Ben</button>
+                <div class="dropdown-content">
+                    <button class="btn" id="squat_btn">
+                        <h2>squat</h2>
+                    </button>
+                    <button class="btn" id="romaniandeadlift_btn">
+                        <h2>romaniandeadlift</h2>
+                    </button>
+                    <button class="btn" id="standingcalfraises_btn">
+                        <h2>standingcalfraises</h2>
+                    </button>
+                </div>
+            </div>
 
-                .omsidan {
-                    width: fit-content;
-                }
-            }
+            <!-- bröst -->
 
-        </style>
+            <div id="benchpress" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>benchpress TEXT</p>
+                    <video controls>
+                        <source src="/benchpress.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="chestflyes" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>chestflyes TEXT</p>
+                    <video controls>
+                        <source src="/chestflyes.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="inclinebench" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>inclinebench TEXT</p>
+                    <video controls>
+                        <source src="/inclinebench2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- rygg -->
+
+            <div id="latpulldown" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>latpulldown TEXT</p>
+                    <video controls>
+                        <source src="/latpulldown.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="pullups" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>pullups TEXT</p>
+                    <video controls>
+                        <source src="/pullups.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="rows" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>rows TEXT</p>
+                    <video controls>
+                        <source src="/rows.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- biceps -->
+
+            <div id="inclinedumbbellcurls" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>inclinedumbbellcurls TEXT</p>
+                    <video controls>
+                        <source
+                            src="/inclinedumbellcurls.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="hammercurls" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>hammercurls TEXT</p>
+                    <video controls>
+                        <source src="/hammercurls.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="preachercurls" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>preachercurls TEXT</p>
+                    <video controls>
+                        <source src="/preachercurls.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- triceps -->
+
+            <div id="dips" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>dips TEXT</p>
+                    <video controls>
+                        <source src="/dips.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="overheadextensions" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>overheadextensions TEXT</p>
+                    <video controls>
+                        <source
+                            src="/overheadextensions.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="tricepspushdown" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>tricepspushdown TEXT</p>
+                    <video controls>
+                        <source src="/tricepspushdown.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- axlar -->
+
+            <div id="overheadpress" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>overheadpress TEXT</p>
+                    <video controls>
+                        <source src="/overheadpress.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="cablelateralraises" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>cablelateralraises TEXT</p>
+                    <video controls>
+                        <source
+                            src="/cablelateralraises.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="facepulls" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>facepulls TEXT</p>
+                    <video controls>
+                        <source src="/facepulls.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- abs -->
+
+            <div id="situps" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>situps TEXT</p>
+                    <video controls>
+                        <source src="/situps.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="legraises" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>legraises TEXT</p>
+                    <video controls>
+                        <source src="/legraises.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="russiantwist" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>russiantwist TEXT</p>
+                    <video controls>
+                        <source src="/russiantwist.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- ben -->
+
+            <div id="squat" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>squat TEXT</p>
+                    <video controls>
+                        <source src="/squat.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="romaniandeadlift" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>romaniandeadlift TEXT</p>
+                    <video controls>
+                        <source src="/romaniandeadlift.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="standingcalfraises" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>standingcalfraises TEXT</p>
+                    <video controls>
+                        <source
+                            src="/standingcalfraises.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+
+
+
+
+        </ul>
     </body>
+    <Footer />
 </html>
+
+<script>
+    let isActive = null;
+
+    function displayBlock(id) {
+        id.style.display = "block";
+        isActive = id;
+    }
+
+    function displayNone(id) {
+        id.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == isActive) {
+            isActive.style.display = "none";
+        }
+    };
+
+    let close = document.querySelector(".close");
+    close.addEventListener("click", function () {
+        displayNone(isActive);
+    });
+
+    // bröst
+
+    let benchpress = document.getElementById("benchpress");
+    let benchpress_btn = document.getElementById("benchpress_btn");
+    benchpress_btn.addEventListener("click", function () {
+        displayBlock(benchpress);
+    });
+
+    let chestflyes = document.getElementById("chestflyes");
+    let chestflyes_btn = document.getElementById("chestflyes_btn");
+    chestflyes_btn.addEventListener("click", function () {
+        displayBlock(chestflyes);
+    });
+
+    let inclinebench = document.getElementById("inclinebench");
+    let inclinebench_btn = document.getElementById("inclinebench_btn");
+    inclinebench_btn.addEventListener("click", function () {
+        displayBlock(inclinebench);
+    });
+
+    // rygg
+
+    let latpulldown = document.getElementById("latpulldown");
+    let latpulldown_btn = document.getElementById("latpulldown_btn");
+    latpulldown_btn.addEventListener("click", function () {
+        displayBlock(latpulldown);
+    });
+
+    let pullups = document.getElementById("pullups");
+    let pullups_btn = document.getElementById("pullups_btn");
+    pullups_btn.addEventListener("click", function () {
+        displayBlock(pullups);
+    });
+
+    let rows = document.getElementById("rows");
+    let rows_btn = document.getElementById("rows_btn");
+    rows_btn.addEventListener("click", function () {
+        displayBlock(rows);
+    });
+
+    // biceps
+
+    let inclinedumbbellcurls = document.getElementById("inclinedumbbellcurls");
+    let inclinedumbbellcurls_btn = document.getElementById(
+        "inclinedumbbellcurls_btn"
+    );
+    inclinedumbbellcurls_btn.addEventListener("click", function () {
+        displayBlock(inclinedumbbellcurls);
+    });
+
+    let hammercurls = document.getElementById("hammercurls");
+    let hammercurls_btn = document.getElementById("hammercurls_btn");
+    hammercurls_btn.addEventListener("click", function () {
+        displayBlock(hammercurls);
+    });
+
+    let preachercurls = document.getElementById("preachercurls");
+    let preachercurls_btn = document.getElementById("preachercurls_btn");
+    preachercurls_btn.addEventListener("click", function () {
+        displayBlock(preachercurls);
+    });
+
+    // triceps
+
+    let dips = document.getElementById("dips");
+    let dips_btn = document.getElementById("dips_btn");
+    dips_btn.addEventListener("click", function () {
+        displayBlock(dips);
+    });
+
+    let overheadextensions = document.getElementById("overheadextensions");
+    let overheadextensions_btn = document.getElementById(
+        "overheadextensions_btn"
+    );
+    overheadextensions_btn.addEventListener("click", function () {
+        displayBlock(overheadextensions);
+    });
+
+    let tricepspushdown = document.getElementById("tricepspushdown");
+    let tricepspushdown_btn = document.getElementById("tricepspushdown_btn");
+    tricepspushdown_btn.addEventListener("click", function () {
+        displayBlock(tricepspushdown);
+    });
+
+    // axlar
+
+    let overheadpress = document.getElementById("overheadpress");
+    let overheadpress_btn = document.getElementById("overheadpress_btn");
+    overheadpress_btn.addEventListener("click", function () {
+        displayBlock(overheadpress);
+    });
+
+    let cablelateralraises = document.getElementById("cablelateralraises");
+    let cablelateralraises_btn = document.getElementById(
+        "cablelateralraises_btn"
+    );
+    cablelateralraises_btn.addEventListener("click", function () {
+        displayBlock(cablelateralraises);
+    });
+
+    let facepulls = document.getElementById("facepulls");
+    let facepulls_btn = document.getElementById("facepulls_btn");
+    facepulls_btn.addEventListener("click", function () {
+        displayBlock(facepulls);
+    });
+
+    // abs
+
+    let situps = document.getElementById("situps");
+    let situps_btn = document.getElementById("situps_btn");
+    situps_btn.addEventListener("click", function () {
+        displayBlock(situps);
+    });
+
+    let legraises = document.getElementById("legraises");
+    let legraises_btn = document.getElementById("legraises_btn");
+    legraises_btn.addEventListener("click", function () {
+        displayBlock(legraises);
+    });
+
+    let russiantwist = document.getElementById("russiantwist");
+    let russiantwist_btn = document.getElementById("russiantwist_btn");
+    russiantwist_btn.addEventListener("click", function () {
+        displayBlock(russiantwist);
+    });
+
+    // ben
+
+    let squat = document.getElementById("squat");
+    let squat_btn = document.getElementById("squat_btn");
+    squat_btn.addEventListener("click", function () {
+        displayBlock(squat);
+    });
+
+    let romaniandeadlift = document.getElementById("romaniandeadlift");
+    let romaniandeadlift_btn = document.getElementById("romaniandeadlift_btn");
+    romaniandeadlift_btn.addEventListener("click", function () {
+        displayBlock(romaniandeadlift);
+    });
+
+    let standingcalfraises = document.getElementById("standingcalfraises");
+    let standingcalfraises_btn = document.getElementById(
+        "standingcalfraises_btn"
+    );
+    standingcalfraises_btn.addEventListener("click", function () {
+        displayBlock(standingcalfraises);
+    });
+</script>
+
+<style>
+    h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .btn:is(:hover, :focus-within) {
+        background-color: #534243;
+        border: 2px solid #e23342;
+    }
+
+    .btn {
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        width: 200px;
+        display: flex;
+        border-radius: 0.5rem;
+        background-color: #444;
+        color: white; 
+        cursor: pointer;
+        margin-left: -20px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .dropbtn {
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        display: flex;
+        border-radius: 0.5rem;
+        background-color: #353535;
+        box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        -webkit-box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 20px 20px 33px -15px rgba(0, 0, 0, 0.49);
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .start-button {
+        background-color: #333;
+        color: white;
+        width: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: x-large;
+        align-self: center;
+    }
+
+    .start-button:hover {
+        cursor: pointer;
+        background-color: #04aa6d;
+    }
+
+    .link-card-grid {
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr)); */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+        padding: 0;
+        margin: 0 50px 100px 50px;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content repeat(12, 1fr) min-content;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .omsidan_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .omsidan {
+        color: white;
+        grid-row: 2 / 3;
+        padding: 20px 100px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        line-height: 30px;
+        width: 55rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper {
+        grid-row: 3 / 20;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 100px;
+        gap: 200px;
+    }
+
+    .wrapper__card {
+        text-decoration: none;
+        color: white;
+        border-radius: 7px;
+        height: 300px;
+        width: 50rem;
+        margin-left: 30rem;
+        padding: 10px;
+    }
+
+    .wrapper__card__img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+        width: 100%;
+    }
+
+    .wrapper__card__text {
+        margin-top: -7rem;
+        margin-left: 15rem;
+        font-size: 5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        .omsidan {
+            width: fit-content;
+        }
+    }
+</style>

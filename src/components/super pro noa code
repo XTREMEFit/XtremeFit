@@ -1,10 +1,7 @@
----
+<!-- ---
 // Component Imports
-// import Button from "../components/Button.astro";
-// import Card from "../components/Card.astro";
 import Navbar from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-// import Modal from "../components/modal.astro";
 ---
 
 <html lang="sv">
@@ -14,7 +11,16 @@ import Footer from "../components/Footer.astro";
         <link rel="icon" type="image/svg+xml" href="/logo_x.png" />
         <meta name="generator" content={Astro.generator} />
         <title>Xtremefit</title>
+        <link
+            href="https://vjs.zencdn.net/8.6.1/video-js.css"
+            rel="stylesheet"
+        />
+
+
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"
+        ></script>
     </head>
+
     <body class="bg-gray-500">
         <Navbar home="active" generator="" about="" />
 
@@ -50,123 +56,194 @@ import Footer from "../components/Footer.astro";
             <a href="/generator" class="start-button"
                 >Börja generera ditt träningsprogram</a
             >
-            <ul role="list" class="link-card-grid">
-                <!-- <div class="dropdown">
-                    <button class="dropbtn">Bröst</button>
-                    <div class="dropdown-content">
-                    </div>
-                    </div> -->
-
-                <button id="inclinebench_btn" class="btn">
-                    <h2>InclineBench</h2>
-                </button>
-                <div id="inclinebench" class="modal">
-                    <div class="modal-content">
-                        <span  class="close" 
-                            >&times;</span
-                        >
-                        <p>InclineBench</p>
-                        <video controls >
-                            <source src="/inclinebench.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
-                <button class="btn" id="test1_btn">
-                    <h2>TEST1</h2>
-                </button>
-                <div id="test1" class="modal">
-                    <div class="modal-content">
-                        <span class="close" 
-                            >&times;</span
-                        >
-                        <p>TESt1 TEXT</p>
-                        <video controls >
-                            <source src="/test-vid.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
-
-                <button class="btn" id="test2_btn">
-                    <h2>TEST2</h2>
-                </button>
-                <div id="test2" class="modal">
-                    <div class="modal-content">
-                        <span class="close" 
-                            >&times;</span
-                        >
-                        <p>TEST2 TEXT</p>
-                        <video controls >
-                            <source src="/test-vid.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
-
-            </ul>
         </div>
-        <Footer />
+        <ul role="list" class="link-card-grid">
 
-        <script>
-            let isActive = null;
 
-            function displayBlock(id) {
-                id.style.display = "block";
-                isActive = id;
-                console.log("displayblock         id " + id);
-                console.log("displayblock       isactive " + isActive);
-            }
+            <button id="inclinebench_btn" class="btn">
+                <h2>InclineBench</h2>
+            </button>
+            <div id="inclinebench" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class="modal_text"> Börja med att sätta bänken på ungefär 30-45 grader för att
+                        kunna lägga fokusen på nedre bröstmuskeln. Sedan lyfter du stången
+                        och tar ner den tills den nuddar bröstet, därefter lyfter du upp den
+                        igen och genomför den rörelsen de antal repetitioner som du valt.</p>
+                        <div class="box">
+                        <video 
+                        id="my-video"
+                        class="video-js vjs-9-16"
+                        controls
+                        preload="auto"
+                        data-setup="{}">
+                                <source src="/test.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                </div>
+            </div>
+
+            <button class="btn" id="benchpress_btn">
+                <h2>benchpress</h2>
+            </button>
+            <div id="benchpress" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>benchpress TEXT</p>
+                    <video controls>
+                        <source src="/benchpress.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <button class="btn" id="dips_btn">
+                <h2>dips</h2>
+            </button>
+            <div id="dips" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>dips TEXT</p>
+                    <video controls>
+                        <source src="/dips.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <button class="btn" id="latpulldown_btn">
+                <h2>latpulldown</h2>
+            </button>
+            <div id="latpulldown" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>latpulldown TEXT</p>
+                    <video controls>
+                        <source src="/latpulldown.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <button class="btn" id="pullups_btn">
+                <h2>pullups</h2>
+            </button>
+            <div id="pullups" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>pullups TEXT</p>
+                    <video controls>
+                        <source src="/pullups.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <button class="btn" id="test1_btn">
+                <h2>test1</h2>
+            </button>
+            <div id="test1" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>test1 TEXT</p>
+                    <video controls>
+                        <source src="/test-vid.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
             
-            function displayNone(id) {
-                id.style.display = "none";
-                console.log("displaynone     id " + id);
-                console.log("displaynone     isactive " +isActive);
-            }
-            
-            window.onclick = function (event) {
-                if (event.target == isActive) {
-                    isActive.style.display = "none";
-                    console.log("displaynone      isactive " + isActive);
-                }
-            };
-
-
-
-
-            let close = document.querySelector(".close");
-            close.addEventListener("click", function () {
-                displayNone(isActive);
-                console.log("close click      isactive" + isActive);
-            });
-
-
-
-
-            var inclinebench = document.getElementById("inclinebench");
-            let inclinebench_btn = document.getElementById("inclinebench_btn");
-            inclinebench_btn.addEventListener("click", function () {
-                displayBlock(inclinebench);
-            });
-
-
-            var test1 = document.getElementById("test1");
-            let test1_btn = document.getElementById("test1_btn");
-            test1_btn.addEventListener("click", function () {
-                displayBlock(test1);
-            });
-
-            var test2 = document.getElementById("test2");
-            let test2_btn = document.getElementById("test2_btn");
-            test2_btn.addEventListener("click", function () {
-                displayBlock(test2);
-            });
-        </script>
+            <button class="btn" id="test2_btn">
+                <h2>TEST2</h2>
+            </button>
+            <div id="test2" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>TEST2 TEXT</p>
+                    <video controls>
+                        <source src="/test-vid.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </ul>
     </body>
+    <Footer />
 </html>
+
+
+<script>
+    let isActive = null;
+
+    function displayBlock(id) {
+        id.style.display = "block";
+        isActive = id;
+        console.log("displayblock         id " + id);
+        console.log("displayblock       isactive " + isActive);
+    }
+
+    function displayNone(id) {
+        id.style.display = "none";
+        console.log("displaynone     id " + id);
+        console.log("displaynone     isactive " + isActive);
+    }
+
+    window.onclick = function (event) {
+        if (event.target == isActive) {
+            isActive.style.display = "none";
+            console.log("displaynone      isactive " + isActive);
+        }
+    };
+
+    let close = document.querySelector(".close");
+    close.addEventListener("click", function () {
+        displayNone(isActive);
+        console.log("close click      isactive" + isActive);
+    });
+
+    var inclinebench = document.getElementById("inclinebench");
+    let inclinebench_btn = document.getElementById("inclinebench_btn");
+    inclinebench_btn.addEventListener("click", function () {
+        displayBlock(inclinebench);
+    });
+
+    var benchpress = document.getElementById("benchpress");
+    let benchpress_btn = document.getElementById("benchpress_btn");
+    benchpress_btn.addEventListener("click", function () {
+        displayBlock(benchpress);
+    });
+
+    var dips = document.getElementById("dips");
+    let dips_btn = document.getElementById("dips_btn");
+    dips_btn.addEventListener("click", function () {
+        displayBlock(dips);
+    });
+
+    var latpulldown = document.getElementById("latpulldown");
+    let latpulldown_btn = document.getElementById("latpulldown_btn");
+    latpulldown_btn.addEventListener("click", function () {
+        displayBlock(latpulldown);
+    });
+
+    var pullups = document.getElementById("pullups");
+    let pullups_btn = document.getElementById("pullups_btn");
+    pullups_btn.addEventListener("click", function () {
+        displayBlock(pullups);
+    });
+
+    var test1 = document.getElementById("test1");
+    let test1_btn = document.getElementById("test1_btn");
+    test1_btn.addEventListener("click", function () {
+        displayBlock(test1);
+    });
+
+    var test2 = document.getElementById("test2");
+    let test2_btn = document.getElementById("test2_btn");
+    test2_btn.addEventListener("click", function () {
+        displayBlock(test2);
+    });
+</script>
 
 <style>
     h2 {
@@ -204,10 +281,17 @@ import Footer from "../components/Footer.astro";
     }
     .modal-content {
         background-color: #fefefe;
+
         margin: 5% auto;
         padding: 20px;
+
         border: 1px solid #888;
+
         width: 80%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
     }
     .close {
         color: #aaa;
@@ -221,6 +305,19 @@ import Footer from "../components/Footer.astro";
         text-decoration: none;
         cursor: pointer;
     }
+    .box > * {
+        width: 100%;
+        aspect-ratio: 9/16;
+    }
+
+    .modal_text {
+        order: 2;
+    }
+
+
+
+
+
 
     .dropbtn {
         color: white;
@@ -251,7 +348,6 @@ import Footer from "../components/Footer.astro";
     .dropdown:hover .dropdown-content {
         display: block;
     }
-
     .start-button {
         background-color: #333;
         color: white;
@@ -336,10 +432,11 @@ import Footer from "../components/Footer.astro";
         font-size: 5rem;
     }
 
-    @media screen and (max-width: 900px) {
-        /* Your styles for smaller screens go here */
+    @media screen (max-width: 900px;) {
+        /* .omsidan_wrapper{ */
+
         .omsidan {
             width: fit-content;
         }
     }
-</style>
+</style> 

@@ -49,6 +49,31 @@ const { href, title, body } = Astro.props;
     </div>
 </div>
 
+
+<script>
+    var modal = document.getElementById("myModal");
+
+    var btn = document.getElementById("myBtn");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+<script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+
+
 <style>
     h2 {
         margin: 0;
@@ -137,26 +162,3 @@ const { href, title, body } = Astro.props;
         order: 2;
     }
 </style>
-
-<script>
-    var modal = document.getElementById("myModal");
-
-    var btn = document.getElementById("myBtn");
-
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-        modal.style.display = "block";
-    };
-
-    span.onclick = function () {
-        modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-</script>
-<script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
